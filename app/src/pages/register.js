@@ -10,7 +10,7 @@ import Link from "@mui/material/Link";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 
-export default function SignUp() {
+export default function Register() {
   const theme = createTheme();
   const onSubmit = (event) => {
     event.preventDefault();
