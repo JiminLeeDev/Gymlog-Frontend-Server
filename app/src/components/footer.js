@@ -59,11 +59,7 @@ export default function Header() {
         message="이메일 주소가 복사되었습니다."
         autoHideDuration={5000}
         action={
-          <IconButton
-            onClick={() => {
-              setEmailCopied(false);
-            }}
-          >
+          <IconButton onClick={() => setEmailCopied(false)}>
             <CloseIcon></CloseIcon>
           </IconButton>
         }
@@ -75,11 +71,7 @@ export default function Header() {
         message="핸드폰 번호가 복사되었습니다."
         autoHideDuration={5000}
         action={
-          <IconButton
-            onClick={() => {
-              setPhoneCopied(false);
-            }}
-          >
+          <IconButton onClick={() => setPhoneCopied(false)}>
             <CloseIcon></CloseIcon>
           </IconButton>
         }
