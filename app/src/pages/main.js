@@ -9,13 +9,9 @@ import {
   TableRow,
 } from "@mui/material";
 import * as React from "react";
+import { useParams } from "react-router-dom";
 
-export default function Main({
-  user_nickname,
-  write_datetime,
-  title,
-  category,
-}) {
+export default function Main() {
   const writePerPage = 10;
   const [page, setPage] = React.useState(1);
   const [pageCount, setPageCount] = React.useState(1);
@@ -23,11 +19,13 @@ export default function Main({
 
   let query_string = "?";
 
+  let params = useParams();
+
   [
-    { name: "user_nickname", value: user_nickname },
-    { name: "write_datetime", value: write_datetime },
-    { name: "title", value: title },
-    { name: "category", value: category },
+    { name: "user_nickname", value: params.nickname },
+    { name: "write_datetime", value: params.write_datetime },
+    { name: "title", value: params.title },
+    { name: "category", value: params.category },
   ].map(
     (data) => (query_string += data.value ? `${data.name}=${data.value}&` : "")
   );
@@ -46,6 +44,7 @@ export default function Main({
         }
       });
   }, []);
+
   return (
     <TableContainer
       component={Box}
@@ -115,9 +114,7 @@ export default function Main({
         variant="outlined"
         shape="rounded"
         page={page}
-        onChange={(e, page) => {
-          setPage(page);
-        }}
+        onChange={(e, page) => setPage(page)}
       />
     </TableContainer>
   );

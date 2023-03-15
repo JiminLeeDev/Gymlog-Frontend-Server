@@ -1,5 +1,3 @@
-import CssBaseline from "@mui/material/CssBaseline";
-import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
@@ -7,7 +5,7 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Link from "@mui/material/Link";
 import Button from "@mui/material/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Register() {
   const onSubmit = (event) => {
@@ -37,7 +35,8 @@ export default function Register() {
         if (data.error) {
           throw new Error(data.error);
         } else {
-          alert("성공적으로 회원가입했습니다.");
+          window.location.href = "#/login";
+          window.location.reload();
         }
       });
   };
@@ -48,23 +47,28 @@ export default function Register() {
     nickname: false,
   });
 
+  useEffect(() => {
+    if (localStorage.getItem("user_nickname")) {
+      window.location.href = "#/";
+      window.location.reload();
+    }
+  }, []);
+
   return (
     <Box
       sx={{
-        marginTop: 8,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
       }}
     >
-      <CssBaseline />
       <Avatar sx={{ m: 1, bgcolor: "secondary.main" }} src="avatar.jpg" />
 
       <Typography component="h1" variant="h5" mb={1}>
         회원가입
       </Typography>
 
-      <Box component="form" noValidate onSubmit={onSubmit} m={2}>
+      <Box component="form" noValidate onSubmit={onSubmit} my={2} width={"50%"}>
         <Grid container spacing={2} mb={3}>
           <Grid item xs={12}>
             <TextField
@@ -167,7 +171,10 @@ export default function Register() {
           my={3}
           variant="body2"
         >
-          <Link href="#" sx={{ textDecoration: "none" }}>
+          <Link
+            href="#/login"
+            sx={{ textDecoration: "none", color: "content.main" }}
+          >
             이미 계정이 있으신가요?
           </Link>
         </Typography>
