@@ -6,13 +6,13 @@ import LoginIcon from "@mui/icons-material/VpnKey";
 import LogOutIcon from "@mui/icons-material/Lock";
 import RegisterIcon from "@mui/icons-material/LockPersonOutlined";
 
-export default function ProfileMenu() {
+export default function AccountMenu() {
   return (
     <DropDownMenu
       btn={
         <IconButton variant={"contained"} sx={{ color: "content.main" }}>
           <ProfileIcon />
-          프로필
+          계정
         </IconButton>
       }
       menu_data={[

@@ -6,7 +6,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import SideBar from "../sidebar/sidebar";
 import ThreadMenu from "../thread_menu";
 import CommentMenu from "../comment_menu";
-import ProfileMenu from "../profile_menu";
+import AccountMenu from "../account_menu";
 
 export default function NavBar() {
   return (
@@ -22,7 +22,7 @@ export default function NavBar() {
       <Stack direction="row" spacing={2} display={{ xs: "none", md: "block" }}>
         <ThreadMenu />
         <CommentMenu />
-        <ProfileMenu />
+        <AccountMenu />
       </Stack>
 
       <SideBar />
