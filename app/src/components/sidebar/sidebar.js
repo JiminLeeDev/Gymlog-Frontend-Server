@@ -28,14 +28,25 @@ export default function SideBar() {
       >
         <List>
           {[
-            { text: "게시글 보기", icon: <PageViewIcon />, link: "" },
-            { text: "게시글 작성", icon: <PageAddIcon />, link: "" },
+            {
+              text: "게시글 보기",
+              icon: <PageViewIcon />,
+              link: "",
+              disabled: false,
+            },
+            {
+              text: "게시글 작성",
+              icon: <PageAddIcon />,
+              link: "/thread/write",
+              disabled: false,
+            },
           ].map((item_data, idx) => (
             <SideBarIconButton
               key={idx}
               text={item_data.text}
               icon={item_data.icon}
               link={item_data.link}
+              disabled={item_data.disabled}
             />
           ))}
         </List>
@@ -43,16 +54,22 @@ export default function SideBar() {
         <Divider />
 
         <List>
-          {[{ text: "댓글 보기", icon: <CommentIcon />, link: "" }].map(
-            (item_data, idx) => (
-              <SideBarIconButton
-                key={idx}
-                text={item_data.text}
-                icon={item_data.icon}
-                link={item_data.link}
-              />
-            )
-          )}
+          {[
+            {
+              text: "댓글 보기",
+              icon: <CommentIcon />,
+              link: "",
+              disabled: false,
+            },
+          ].map((item_data, idx) => (
+            <SideBarIconButton
+              key={idx}
+              text={item_data.text}
+              icon={item_data.icon}
+              link={item_data.link}
+              disabled={item_data.disabled}
+            />
+          ))}
         </List>
 
         <Divider />
@@ -62,13 +79,20 @@ export default function SideBar() {
             {
               text: "로그인",
               icon: <LoginIcon />,
-              link: localStorage.getItem("user_nickname") ? "" : "/login",
+              link: "/login",
+              disabled: localStorage.getItem("user_nickname") !== null,
             },
-            { text: "회원가입", icon: <RegisterIcon />, link: "/register" },
+            {
+              text: "회원가입",
+              icon: <RegisterIcon />,
+              link: "/register",
+              disabled: localStorage.getItem("user_nickname") !== null,
+            },
             {
               text: "로그아웃",
               icon: <LogOutIcon />,
               link: "/logout",
+              disabled: localStorage.getItem("user_nickname") === null,
             },
           ].map((item_data, idx) => (
             <SideBarIconButton
@@ -76,6 +100,7 @@ export default function SideBar() {
               text={item_data.text}
               icon={item_data.icon}
               link={item_data.link}
+              disabled={item_data.disabled}
             />
           ))}
         </List>

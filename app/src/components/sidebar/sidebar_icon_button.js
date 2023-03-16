@@ -6,16 +6,16 @@ import {
   ListItemText,
 } from "@mui/material";
 
-export default function SideBarIconButton({ link, icon, text }) {
+export default function SideBarIconButton({ link, icon, text, disabled }) {
   return (
-    <ListItem
-      disablePadding
-      onClick={() => {
-        window.location.href = `#${link}`;
-        window.location.reload();
-      }}
-    >
-      <ListItemButton>
+    <ListItem disablePadding>
+      <ListItemButton
+        disabled={disabled}
+        onClick={() => {
+          window.location.href = `#${link}`;
+          window.location.reload();
+        }}
+      >
         <ListItemIcon>{icon}</ListItemIcon>
         <ListItemText primary={text} />
       </ListItemButton>

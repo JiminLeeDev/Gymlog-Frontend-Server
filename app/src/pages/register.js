@@ -49,7 +49,7 @@ export default function Register() {
   });
 
   useEffect(() => {
-    if (localStorage.getItem("user_nickname")) {
+    if (localStorage.getItem("user_nickname") !== null) {
       window.location.href = "#/";
       window.location.reload();
     }

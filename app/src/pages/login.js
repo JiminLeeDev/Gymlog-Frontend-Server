@@ -50,7 +50,7 @@ export default function Login() {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("user_nickname")) {
+    if (localStorage.getItem("user_nickname") !== null) {
       window.location.href = "#/";
       window.location.reload();
     }
