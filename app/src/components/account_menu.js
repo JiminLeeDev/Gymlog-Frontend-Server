@@ -20,19 +20,19 @@ export default function AccountMenu() {
           icon: <LoginIcon />,
           text: "로그인",
           link: "/login",
-          disabled: localStorage.getItem("user_nickname"),
+          disabled: localStorage.getItem("user_nickname") === "",
         },
         {
           icon: <LogOutIcon />,
           text: "로그아웃",
           link: "/logout",
-          disabled: !localStorage.getItem("user_nickname"),
+          disabled: localStorage.getItem("user_nickname") !== "",
         },
         {
           icon: <RegisterIcon />,
           text: "회원가입",
           link: "/register",
-          disabled: localStorage.getItem("user_nickname"),
+          disabled: localStorage.getItem("user_nickname") === "",
         },
       ]}
     />
