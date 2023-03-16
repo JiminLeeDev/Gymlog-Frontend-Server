@@ -14,6 +14,7 @@ import Main from "./pages/main";
 import { Box, Container, createTheme, CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
 import ThreadWrite from "./pages/thread_write";
+import ThreadView from "./pages/thread_view";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -72,6 +73,7 @@ root.render(
               <Route path="/login" element={<LogIn />} />
               <Route path="/logout" element={<LogOut />} />
               <Route path="/thread/write" element={<ThreadWrite />} />
+              <Route path="/thread/view/:id" element={<ThreadView />} />
             </Routes>
           </HashRouter>
         </Box>
