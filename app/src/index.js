@@ -13,6 +13,7 @@ import Main from "./pages/main";
 
 import { Box, Container, createTheme, CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
+import ThreadWrite from "./pages/thread_write";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -60,16 +61,17 @@ root.render(
           <HashRouter>
             <Routes>
               <Route path="/" element={<Main />} />
-              <Route path="/writes/by-nickname/:nickname" element={<Main />} />
-              <Route path="/writes/by-title/:title" element={<Main />} />
+              <Route path="/thread/by-nickname/:nickname" element={<Main />} />
+              <Route path="/thread/by-title/:title" element={<Main />} />
               <Route
-                path="/writes/by-write_date/:nickname"
+                path="/thread/by-write_date/:nickname"
                 element={<Main />}
               />
-              <Route path="/writes/by-category/:category" element={<Main />} />
+              <Route path="/thread/by-category/:category" element={<Main />} />
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<LogIn />} />
               <Route path="/logout" element={<LogOut />} />
+              <Route path="/thread/write" element={<ThreadWrite />} />
             </Routes>
           </HashRouter>
         </Box>
