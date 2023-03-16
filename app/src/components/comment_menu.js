@@ -13,7 +13,14 @@ export default function CommentMenu() {
           댓글
         </IconButton>
       }
-      menu_data={[{ icon: <CommentViewIcon />, text: "댓글 보기", link: "/" }]}
+      menu_data={[
+        {
+          icon: <CommentViewIcon />,
+          text: "댓글 보기",
+          link: "/",
+          disabled: false,
+        },
+      ]}
     />
   );
 }

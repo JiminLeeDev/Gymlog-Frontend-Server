@@ -15,8 +15,18 @@ export default function ThreadMenu() {
         </IconButton>
       }
       menu_data={[
-        { icon: <PageViewIcon />, text: "게시글 보기", link: "/" },
-        { icon: <PageAddIcon />, text: "게시글 작성하기", link: "/" },
+        {
+          icon: <PageViewIcon />,
+          text: "게시글 보기",
+          link: "/",
+          disabled: false,
+        },
+        {
+          icon: <PageAddIcon />,
+          text: "게시글 작성하기",
+          link: "/thread/write",
+          disabled: false,
+        },
       ]}
     />
   );
