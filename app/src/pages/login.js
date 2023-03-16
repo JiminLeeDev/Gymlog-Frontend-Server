@@ -40,6 +40,8 @@ export default function Login() {
             localStorage.setItem("user_password", data.results[0].password);
             localStorage.setItem("user_nickname", data.results[0].nickname);
 
+            alert("로그인되셨습니다.");
+
             window.location.href = "#/";
             window.location.reload();
           }

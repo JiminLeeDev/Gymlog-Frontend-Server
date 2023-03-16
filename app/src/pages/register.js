@@ -33,8 +33,9 @@ export default function Register() {
       .then((data) => data.json())
       .then((data) => {
         if (data.error) {
-          throw new Error(data.error);
+          alert("회원가입 하지 못했습니다.");
         } else {
+          alert("회원가입 되셨습니다.");
           window.location.href = "#/login";
           window.location.reload();
         }
