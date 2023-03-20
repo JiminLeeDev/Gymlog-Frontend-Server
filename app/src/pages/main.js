@@ -49,7 +49,6 @@ export default function Main() {
     <TableContainer
       component={Box}
       sx={{
-        bgcolor: "background.sub",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
