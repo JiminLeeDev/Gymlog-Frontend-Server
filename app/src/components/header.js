@@ -10,7 +10,7 @@ export default function Header() {
       mt={1}
       mb={3}
     >
-      <Typography variant="h1" component="h1" color="primary.main">
+      <Typography variant="h1" component="h1" color="header.content">
         GymLog
       </Typography>
     </Box>
