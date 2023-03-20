@@ -33,6 +33,13 @@ palette = {
   },
 };
 
+palette = {
+  ...palette,
+  header: {
+    content: palette.content.main,
+  },
+};
+
 export default createTheme({
   palette: palette,
   components: {
