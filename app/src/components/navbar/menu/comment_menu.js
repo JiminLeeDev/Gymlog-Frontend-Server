@@ -8,7 +8,10 @@ export default function CommentMenu() {
   return (
     <DropDownMenu
       btn={
-        <IconButton variant={"contained"} sx={{ color: "content.main" }}>
+        <IconButton
+          variant={"contained"}
+          sx={{ color: "dropdown_menu.content" }}
+        >
           <CommentIcon />
           댓글
         </IconButton>
