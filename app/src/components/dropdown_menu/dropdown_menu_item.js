@@ -7,7 +7,7 @@ export default function DropDownMenuItem({ icon, text, link, disabled }) {
   return (
     <MenuItem
       disabled={disabled}
-      sx={{ bgcolor: "primary.main" }}
+      sx={{ bgcolor: "dropdown_menu.item.main" }}
       onClick={() => {
         window.location.href = `#${link}`;
         window.location.reload();
