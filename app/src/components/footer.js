@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <Box component="footer" textAlign={"center"} my={1} bgcolor="footer.main">
-      <Typography variant="h6" color="content.main">
+      <Typography variant="h6" color="footer.content">
         This site is made by Jimin Lee
       </Typography>
       <IconButton
