@@ -13,7 +13,7 @@ export default function Header() {
   const [phoneCopied, setPhoneCopied] = React.useState(false);
 
   return (
-    <Box component="footer" textAlign={"center"} my={1} bgcolor="primary.main">
+    <Box component="footer" textAlign={"center"} my={1} bgcolor="footer.main">
       <Typography variant="h6" color="content.main">
         This site is made by Jimin Lee
       </Typography>

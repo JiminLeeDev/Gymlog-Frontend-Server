@@ -25,6 +25,13 @@ palette = {
   },
 };
 
+palette = {
+  ...palette,
+  footer: {
+    main: palette.primary.main,
+  },
+};
+
 export default createTheme({
   palette: palette,
   components: {
