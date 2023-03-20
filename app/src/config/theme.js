@@ -5,7 +5,7 @@ let palette = {
   secondary: { main: "#67D5B5" },
   success: { main: "#84B1ED" },
   background: { main: "#F8FAFF", sub: "#84B1ED" },
-  content: { main: "blue" },
+  content: { main: "dark_grey" },
 };
 
 palette = {
@@ -21,6 +21,7 @@ palette = {
   ...palette,
   navbar: {
     main: palette.primary.main,
+    content: palette.content.main,
   },
 };
 

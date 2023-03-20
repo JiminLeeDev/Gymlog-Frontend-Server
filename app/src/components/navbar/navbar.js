@@ -32,7 +32,7 @@ export default function NavBar() {
         <IconButton
           variant="contained"
           href=""
-          sx={{ color: "content.main", bgcolor: "secondary.main" }}
+          sx={{ color: "navbar.content" }}
         >
           <SearchIcon />
         </IconButton>
