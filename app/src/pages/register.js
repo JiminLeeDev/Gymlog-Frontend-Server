@@ -63,7 +63,7 @@ export default function Register() {
         alignItems: "center",
       }}
     >
-      <Avatar sx={{ m: 1, bgcolor: "secondary.main" }} src="avatar.jpg" />
+      <Avatar sx={{ m: 1 }} src="avatar.jpg" />
 
       <Typography component="h1" variant="h5" mb={1}>
         회원가입
@@ -162,7 +162,7 @@ export default function Register() {
           type="submit"
           fullWidth
           variant="contained"
-          sx={{ bgcolor: "primary.main" }}
+          sx={{ bgcolor: "form.button.main", color: "form.button.content" }}
         >
           회원가입
         </Button>
@@ -174,7 +174,7 @@ export default function Register() {
         >
           <Link
             href="#/login"
-            sx={{ textDecoration: "none", color: "content.main" }}
+            sx={{ textDecoration: "none", color: "form.content" }}
           >
             이미 계정이 있으신가요?
           </Link>
