@@ -29,6 +29,7 @@ palette = {
   ...palette,
   footer: {
     main: palette.primary.main,
+    content: palette.content.main,
   },
 };
 
