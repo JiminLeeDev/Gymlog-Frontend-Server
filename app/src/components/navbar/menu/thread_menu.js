@@ -9,7 +9,10 @@ export default function ThreadMenu() {
   return (
     <DropDownMenu
       btn={
-        <IconButton variant={"contained"} sx={{ color: "content.main" }}>
+        <IconButton
+          variant={"contained"}
+          sx={{ color: "dropdown_menu.content" }}
+        >
           <PageIcon />
           게시글
         </IconButton>

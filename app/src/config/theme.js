@@ -12,6 +12,7 @@ palette = {
   ...palette,
   dropdown_menu: {
     main: palette.primary.main,
+    content: palette.content.main,
     item: { main: palette.primary.main, content: palette.content.main },
   },
 };
