@@ -10,7 +10,10 @@ export default function AccountMenu() {
   return (
     <DropDownMenu
       btn={
-        <IconButton variant={"contained"} sx={{ color: "content.main" }}>
+        <IconButton
+          variant={"contained"}
+          sx={{ color: "dropdown_menu.content" }}
+        >
           <ProfileIcon />
           계정
         </IconButton>
