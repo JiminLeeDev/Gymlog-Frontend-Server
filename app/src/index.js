@@ -10,40 +10,14 @@ import Register from "./pages/register";
 import LogIn from "./pages/login";
 import LogOut from "./pages/logout";
 import Main from "./pages/main";
+import theme from "./config/theme";
 
-import { Box, Container, createTheme, CssBaseline } from "@mui/material";
+import { Box, Container, CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
 import ThreadWrite from "./pages/thread_write";
 import ThreadView from "./pages/thread_view";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-const theme = createTheme({
-  palette: {
-    primary: { main: "#EE7785" },
-    secondary: { main: "#67D5B5" },
-    success: { main: "#84B1ED" },
-    background: { main: "#F8FAFF", sub: "#84B1ED" },
-    content: { main: "#71226e" },
-  },
-  components: {
-    MuiDrawer: {
-      styleOverrides: {
-        paper: {
-          backgroundColor: "#84B1ED",
-          color: "#71226e",
-        },
-      },
-    },
-    MuiMenu: {
-      styleOverrides: {
-        paper: {
-          backgroundColor: "#EE7785",
-        },
-      },
-    },
-  },
-});
 
 root.render(
   <React.StrictMode>
