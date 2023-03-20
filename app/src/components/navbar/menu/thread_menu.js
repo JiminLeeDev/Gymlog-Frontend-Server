@@ -3,7 +3,7 @@ import IconButton from "@mui/material/IconButton";
 import PageIcon from "@mui/icons-material/Description";
 import PageViewIcon from "@mui/icons-material/FindInPage";
 import PageAddIcon from "@mui/icons-material/PostAdd";
-import DropDownMenu from "./dropdown_menu/dropdown_menu";
+import DropDownMenu from "../../dropdown_menu/dropdown_menu";
 
 export default function ThreadMenu() {
   return (

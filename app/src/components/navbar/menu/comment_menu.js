@@ -1,7 +1,7 @@
 import * as React from "react";
 import IconButton from "@mui/material/IconButton";
 import CommentViewIcon from "@mui/icons-material/ChatBubble";
-import DropDownMenu from "./dropdown_menu/dropdown_menu";
+import DropDownMenu from "../../dropdown_menu/dropdown_menu";
 import CommentIcon from "@mui/icons-material/ChatBubble";
 
 export default function CommentMenu() {
