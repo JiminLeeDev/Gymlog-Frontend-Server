@@ -4,9 +4,9 @@ import { Stack, TextField } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import SideBar from "../sidebar/sidebar";
-import ThreadMenu from "../thread_menu";
-import CommentMenu from "../comment_menu";
-import AccountMenu from "../account_menu";
+import ThreadMenu from "./menu/thread_menu";
+import CommentMenu from "./menu/comment_menu";
+import AccountMenu from "./menu/account_menu";
 
 export default function NavBar() {
   return (

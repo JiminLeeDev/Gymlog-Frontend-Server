@@ -1,10 +1,10 @@
 import * as React from "react";
 import IconButton from "@mui/material/IconButton";
-import DropDownMenu from "./dropdown_menu/dropdown_menu";
 import ProfileIcon from "@mui/icons-material/Person";
 import LoginIcon from "@mui/icons-material/VpnKey";
 import LogOutIcon from "@mui/icons-material/Lock";
 import RegisterIcon from "@mui/icons-material/LockPersonOutlined";
+import DropDownMenu from "../../dropdown_menu/dropdown_menu";
 
 export default function AccountMenu() {
   return (
