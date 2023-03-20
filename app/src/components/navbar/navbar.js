@@ -11,7 +11,7 @@ import AccountMenu from "./menu/account_menu";
 export default function NavBar() {
   return (
     <Box
-      bgcolor="secondary.main"
+      bgcolor="navbar.main"
       mt={1}
       mb={3}
       display="flex"
