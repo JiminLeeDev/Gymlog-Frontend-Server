@@ -15,7 +15,7 @@ export default function DropDownMenu({ btn, menu_data }) {
         anchorEl={anchorElement}
         onClose={() => setAnchorElement(null)}
       >
-        <MenuList sx={{ bgcolor: "primary.main" }}>
+        <MenuList sx={{ bgcolor: "dropdown_menu.main" }}>
           {menu_data.map((data, idx) => (
             <DropDownMenuItem
               icon={data.icon}
