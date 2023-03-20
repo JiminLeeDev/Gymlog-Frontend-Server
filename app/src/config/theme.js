@@ -17,6 +17,13 @@ palette = {
   },
 };
 
+palette = {
+  ...palette,
+  navbar: {
+    main: palette.primary.main,
+  },
+};
+
 export default createTheme({
   palette: palette,
   components: {
