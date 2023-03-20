@@ -65,7 +65,7 @@ export default function ThreadWrite() {
         alignItems: "center",
       }}
     >
-      <Avatar sx={{ m: 1, bgcolor: "secondary.main" }} src="avatar.jpg" />
+      <Avatar sx={{ m: 1 }} src="avatar.jpg" />
 
       <Typography component="h1" variant="h5" mb={1}>
         글 작성
@@ -164,7 +164,7 @@ export default function ThreadWrite() {
           type="submit"
           fullWidth
           variant="contained"
-          sx={{ bgcolor: "primary.main" }}
+          sx={{ bgcolor: "form.button.main", color: "form.button.content" }}
         >
           작성
         </Button>
