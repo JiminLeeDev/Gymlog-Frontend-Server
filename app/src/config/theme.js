@@ -5,7 +5,7 @@ let palette = {
   secondary: { main: "#67D5B5" },
   success: { main: "#84B1ED" },
   background: { main: "#F8FAFF", sub: "#84B1ED" },
-  content: { main: "dark_grey" },
+  content: { main: "black" },
 };
 
 palette = {
@@ -36,6 +36,17 @@ palette = {
 palette = {
   ...palette,
   header: {
+    content: palette.content.main,
+  },
+};
+
+palette = {
+  ...palette,
+  form: {
+    button: {
+      main: palette.primary.main,
+      content: palette.content.main,
+    },
     content: palette.content.main,
   },
 };
