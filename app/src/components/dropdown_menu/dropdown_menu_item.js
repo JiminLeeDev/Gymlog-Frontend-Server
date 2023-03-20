@@ -14,7 +14,9 @@ export default function DropDownMenuItem({ icon, text, link, disabled }) {
       }}
     >
       <ListItemIcon>{icon}</ListItemIcon>
-      <ListItemText>{text}</ListItemText>
+      <ListItemText sx={{ color: "dropdown_menu.item.content" }}>
+        {text}
+      </ListItemText>
     </MenuItem>
   );
 }

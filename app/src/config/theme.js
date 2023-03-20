@@ -1,12 +1,19 @@
 import { createTheme } from "@mui/material";
 
-const palette = {
+let palette = {
   primary: { main: "#EE7785" },
   secondary: { main: "#67D5B5" },
   success: { main: "#84B1ED" },
   background: { main: "#F8FAFF", sub: "#84B1ED" },
-  content: { main: "#71226e" },
-  dropdown_menu: { main: "#EE7785", item: { main: "#EE7785" } },
+  content: { main: "blue" },
+};
+
+palette = {
+  ...palette,
+  dropdown_menu: {
+    main: palette.primary.main,
+    item: { main: palette.primary.main, content: palette.content.main },
+  },
 };
 
 export default createTheme({
