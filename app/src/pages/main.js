@@ -82,7 +82,14 @@ export default function Main() {
           {fetched_writes.map((table_data, idx) => {
             return idx >= (page - 1) * writePerPage &&
               idx < page * writePerPage ? (
-              <TableRow key={table_data.id}>
+              <TableRow
+                key={table_data.id}
+                onClick={() => {
+                  window.location.href = `#/thread/view/${table_data.id}`;
+                  window.location.reload();
+                }}
+                sx={{ cursor: "pointer" }}
+              >
                 <TableCell sx={{ display: { xs: "none", md: "table-cell" } }}>
                   {table_data.id}
                 </TableCell>
