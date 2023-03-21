@@ -2,21 +2,24 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { HashRouter, Route, Routes } from "react-router-dom";
 
+import { Box, Container, CssBaseline } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
+
+import theme from "./config/theme";
+
 import Header from "./components/header";
 import NavBar from "./components/navbar/navbar";
 import Footer from "./components/footer";
 
-import Register from "./pages/register";
-import LogIn from "./pages/login";
-import LogOut from "./pages/logout";
 import Main from "./pages/main";
-import theme from "./config/theme";
 
-import { Box, Container, CssBaseline } from "@mui/material";
-import { ThemeProvider } from "@mui/material";
-import ThreadWrite from "./pages/thread_write";
-import ThreadView from "./pages/thread_view";
-import ThreadModify from "./pages/thread_modify";
+import Register from "./pages/account/register";
+import LogIn from "./pages/account/login";
+import LogOut from "./pages/account/logout";
+
+import ThreadWrite from "./pages/thread/thread_write";
+import ThreadView from "./pages/thread/thread_view";
+import ThreadModify from "./pages/thread/thread_modify";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
