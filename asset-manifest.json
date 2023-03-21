@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/Gymlog-Frontend-Server/static/js/main.9619f022.js",
+    "main.js": "/Gymlog-Frontend-Server/static/js/main.193c45a4.js",
     "index.html": "/Gymlog-Frontend-Server/index.html",
-    "main.9619f022.js.map": "/Gymlog-Frontend-Server/static/js/main.9619f022.js.map"
+    "main.193c45a4.js.map": "/Gymlog-Frontend-Server/static/js/main.193c45a4.js.map"
   },
   "entrypoints": [
-    "static/js/main.9619f022.js"
+    "static/js/main.193c45a4.js"
   ]
 }
