@@ -6,6 +6,9 @@ import { useParams } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ModifyIcon from "@mui/icons-material/DriveFileRenameOutline";
 
+import CommentView from "../../components/comment/comment_view";
+import CommenWrite from "../../components/comment/comment_write";
+
 export default function ThreadView() {
   const params = useParams();
   const [threadData, setThreadData] = useState({
@@ -39,81 +42,86 @@ export default function ThreadView() {
 
   return (
     <Box textAlign="center" p={3}>
-      <Typography variant="h4">{threadData.title}</Typography>
-
-      <Box
-        display="flex"
-        flexDirection="row"
-        justifyContent="space-between"
-        width="100%"
-        my={3}
-      >
-        {threadData.is_writer ? (
-          <Box display="flex" justifyContent="flex-start">
-            <IconButton
-              onClick={() => {
-                fetch(`http://portfoliodb.link:8080/thread`, {
-                  method: "DELETE",
-                  body: JSON.stringify({ id: threadData.id }),
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                })
-                  .then((data) => data.json())
-                  .then((data) => {
-                    if (data.error) {
-                      alert(
-                        "글이 삭제되지 않았습니다, 다시 시도해주세요. 죄송합니다"
-                      );
-                    } else {
-                      window.location.href = "#/";
-                      window.location.reload();
-                    }
-                  });
-              }}
-              sx={{
-                color: "form.button.content",
-                display: threadData.is_writer ? "inline-block" : "none",
-              }}
-            >
-              <DeleteIcon />
-            </IconButton>
-
-            <IconButton
-              onClick={() => {
-                window.location.href = `/#/thread/modify/${params.id}`;
-                window.location.reload();
-              }}
-              sx={{
-                color: "form.button.content",
-                display: threadData.is_writer ? "inline-block" : "none",
-              }}
-            >
-              <ModifyIcon />
-            </IconButton>
-          </Box>
-        ) : (
-          ""
-        )}
+      <Box minHeight="100vh">
+        <Typography variant="h4">{threadData.title}</Typography>
 
         <Box
-          display={threadData.is_writer ? "inline-block" : "flex"}
+          display="flex"
+          flexDirection="row"
           justifyContent="space-between"
           width="100%"
-          textAlign="right"
+          my={3}
         >
-          <Typography>
-            {threadData.user_nickname}에 의해 {threadData.write_datetime}에
-            작성됨.
-          </Typography>
+          {threadData.is_writer ? (
+            <Box display="flex" justifyContent="flex-start">
+              <IconButton
+                onClick={() => {
+                  fetch(`http://portfoliodb.link:8080/thread`, {
+                    method: "DELETE",
+                    body: JSON.stringify({ id: threadData.id }),
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                  })
+                    .then((data) => data.json())
+                    .then((data) => {
+                      if (data.error) {
+                        alert(
+                          "글이 삭제되지 않았습니다, 다시 시도해주세요. 죄송합니다"
+                        );
+                      } else {
+                        window.location.href = "#/";
+                        window.location.reload();
+                      }
+                    });
+                }}
+                sx={{
+                  color: "form.button.content",
+                  display: threadData.is_writer ? "inline-block" : "none",
+                }}
+              >
+                <DeleteIcon />
+              </IconButton>
 
-          <Chip label={threadData.category} />
+              <IconButton
+                onClick={() => {
+                  window.location.href = `/#/thread/modify/${params.id}`;
+                  window.location.reload();
+                }}
+                sx={{
+                  color: "form.button.content",
+                  display: threadData.is_writer ? "inline-block" : "none",
+                }}
+              >
+                <ModifyIcon />
+              </IconButton>
+            </Box>
+          ) : (
+            ""
+          )}
+
+          <Box
+            display={threadData.is_writer ? "inline-block" : "flex"}
+            justifyContent="space-between"
+            width="100%"
+            textAlign="right"
+          >
+            <Typography>
+              {threadData.user_nickname}에 의해 {threadData.write_datetime}에
+              작성됨.
+            </Typography>
+
+            <Chip label={threadData.category} />
+          </Box>
         </Box>
+
+        <Divider width="100%" sx={{ mb: "3%" }}></Divider>
+
+        <Typography variant="body1">{threadData.content}</Typography>
       </Box>
 
-      <Divider width="100%" sx={{ mb: "3%" }}></Divider>
-
-      {threadData.content}
+      <CommenWrite thread_id={params.id}></CommenWrite>
+      <CommentView thread_id={params.id} />
     </Box>
   );
 }
