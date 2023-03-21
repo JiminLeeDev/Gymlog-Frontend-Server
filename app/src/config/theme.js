@@ -20,7 +20,7 @@ palette = {
 palette = {
   ...palette,
   navbar: {
-    main: palette.primary.main,
+    main: palette.secondary.main,
     content: palette.content.main,
   },
 };

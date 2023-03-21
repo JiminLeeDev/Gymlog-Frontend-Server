@@ -46,10 +46,6 @@ root.render(
               />
               <Route path="/thread-list/by-title/:title" element={<Main />} />
               <Route
-                path="/thread-list/by-nickname/:nickname"
-                element={<Main />}
-              />
-              <Route
                 path="/thread-list/by-category/:category"
                 element={<Main />}
               />
