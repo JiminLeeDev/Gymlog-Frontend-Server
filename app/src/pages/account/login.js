@@ -24,7 +24,7 @@ export default function Login() {
       return;
     }
 
-    fetch(`http://portfoliodb.link:8080/user?id=${id}&password=${password}`)
+    fetch(`https://portfoliodb.link:8080/user?id=${id}&password=${password}`)
       .then((data) => data.json())
       .then((data) => {
         if (data.error) {

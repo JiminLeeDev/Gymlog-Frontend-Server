@@ -33,7 +33,7 @@ export default function Main() {
   query_string = query_string.substring(0, query_string.length - 1);
 
   React.useEffect(() => {
-    fetch(`http://portfoliodb.link:8080/thread${query_string}`)
+    fetch(`https://portfoliodb.link:8080/thread${query_string}`)
       .then((d) => d.json())
       .then((d) => {
         if (!d.error) {

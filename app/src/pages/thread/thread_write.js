@@ -19,7 +19,7 @@ export default function ThreadWrite() {
       return;
     }
 
-    fetch(`http://portfoliodb.link:8080/thread`, {
+    fetch(`https://portfoliodb.link:8080/thread`, {
       method: "POST",
       body: JSON.stringify({
         title: event.currentTarget.title.value,

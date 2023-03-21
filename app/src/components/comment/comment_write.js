@@ -16,7 +16,7 @@ export default function CommentWrite({ thread_id }) {
 
         e.preventDefault();
 
-        fetch(`http://portfoliodb.link:8080/comment`, {
+        fetch(`https://portfoliodb.link:8080/comment`, {
           method: "POST",
           body: JSON.stringify({
             content: formData.content,

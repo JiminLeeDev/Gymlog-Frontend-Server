@@ -6,7 +6,7 @@ export default function CommentDelete({ comment_id, thread_id }) {
   return (
     <IconButton
       onClick={() => {
-        fetch(`http://portfoliodb.link:8080/comment`, {
+        fetch(`https://portfoliodb.link:8080/comment`, {
           method: "DELETE",
           body: JSON.stringify({
             id: comment_id,

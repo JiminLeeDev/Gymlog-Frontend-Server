@@ -19,7 +19,7 @@ export default function Register() {
       return;
     }
 
-    fetch(`http://portfoliodb.link:8080/user`, {
+    fetch(`https://portfoliodb.link:8080/user`, {
       method: "POST",
       body: JSON.stringify({
         nickname: event.currentTarget.nickname.value,

@@ -9,7 +9,7 @@ export default function CommentView({ thread_id }) {
   const [commentData, setCommentData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://portfoliodb.link:8080/comment?thread_id=${thread_id}`)
+    fetch(`https://portfoliodb.link:8080/comment?thread_id=${thread_id}`)
       .then((data) => data.json())
       .then((data) =>
         setCommentData(

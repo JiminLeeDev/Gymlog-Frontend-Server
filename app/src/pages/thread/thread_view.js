@@ -21,7 +21,7 @@ export default function ThreadView() {
     is_writer: false,
   });
   useEffect(() => {
-    fetch(`http://portfoliodb.link:8080/thread?id=${params.id}`)
+    fetch(`https://portfoliodb.link:8080/thread?id=${params.id}`)
       .then((data) => data.json())
       .then((data) => {
         if (data.error || data.results.length < 1) {
@@ -56,7 +56,7 @@ export default function ThreadView() {
             <Box display="flex" justifyContent="flex-start">
               <IconButton
                 onClick={() => {
-                  fetch(`http://portfoliodb.link:8080/thread`, {
+                  fetch(`https://portfoliodb.link:8080/thread`, {
                     method: "DELETE",
                     body: JSON.stringify({ id: threadData.id }),
                     headers: {

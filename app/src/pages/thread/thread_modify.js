@@ -27,7 +27,7 @@ export default function ThreadWrite() {
       return;
     }
 
-    fetch(`http://portfoliodb.link:8080/thread`, {
+    fetch(`https://portfoliodb.link:8080/thread`, {
       method: "PUT",
       body: JSON.stringify({
         id: params.id,
@@ -62,7 +62,7 @@ export default function ThreadWrite() {
       window.location.reload();
     }
 
-    fetch(`http://portfoliodb.link:8080/thread?id=${params.id}`)
+    fetch(`https://portfoliodb.link:8080/thread?id=${params.id}`)
       .then((data) => data.json())
       .then((data) => {
         if (data.error || data.results.length < 1) {
