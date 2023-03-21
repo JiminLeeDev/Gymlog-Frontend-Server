@@ -16,6 +16,7 @@ import { Box, Container, CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
 import ThreadWrite from "./pages/thread_write";
 import ThreadView from "./pages/thread_view";
+import ThreadModify from "./pages/thread_modify";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -36,18 +37,25 @@ root.render(
           <HashRouter>
             <Routes>
               <Route path="/" element={<Main />} />
-              <Route path="/thread/by-nickname/:nickname" element={<Main />} />
-              <Route path="/thread/by-title/:title" element={<Main />} />
               <Route
-                path="/thread/by-write_date/:nickname"
+                path="/thread-list/by-nickname/:nickname"
                 element={<Main />}
               />
-              <Route path="/thread/by-category/:category" element={<Main />} />
+              <Route path="/thread-list/by-title/:title" element={<Main />} />
+              <Route
+                path="/thread-list/by-nickname/:nickname"
+                element={<Main />}
+              />
+              <Route
+                path="/thread-list/by-category/:category"
+                element={<Main />}
+              />
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<LogIn />} />
               <Route path="/logout" element={<LogOut />} />
               <Route path="/thread/write" element={<ThreadWrite />} />
               <Route path="/thread/view/:id" element={<ThreadView />} />
+              <Route path="/thread/modify/:id" element={<ThreadModify />} />
             </Routes>
           </HashRouter>
         </Box>

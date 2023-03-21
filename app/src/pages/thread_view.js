@@ -1,9 +1,10 @@
-import { Button, Chip, Divider, IconButton, Typography } from "@mui/material";
+import { Chip, Divider, IconButton, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import DeleteIcon from "@mui/icons-material/Delete";
+import ModifyIcon from "@mui/icons-material/DriveFileRenameOutline";
 
 export default function ThreadView() {
   const params = useParams();
@@ -16,7 +17,6 @@ export default function ThreadView() {
     write_datetime: "",
     is_writer: false,
   });
-
   useEffect(() => {
     fetch(`http://portfoliodb.link:8080/thread?id=${params.id}`)
       .then((data) => data.json())
@@ -34,9 +34,6 @@ export default function ThreadView() {
               localStorage.getItem("user_nickname"),
           });
         }
-      })
-      .then(() => {
-        console.log(threadData);
       });
   }, []);
 
@@ -52,34 +49,49 @@ export default function ThreadView() {
         my={3}
       >
         {threadData.is_writer ? (
-          <IconButton
-            onClick={() => {
-              fetch(`http://portfoliodb.link:8080/thread`, {
-                method: "DELETE",
-                body: JSON.stringify({ id: threadData.id }),
-                headers: {
-                  "Content-Type": "application/json",
-                },
-              })
-                .then((data) => data.json())
-                .then((data) => {
-                  if (data.error) {
-                    alert(
-                      "글이 삭제되지 않았습니다, 다시 시도해주세요. 죄송합니다"
-                    );
-                  } else {
-                    window.location.href = "#/";
-                    window.location.reload();
-                  }
-                });
-            }}
-            sx={{
-              color: "form.button.content",
-              display: threadData.is_writer ? "inline-block" : "none",
-            }}
-          >
-            <DeleteIcon />
-          </IconButton>
+          <Box display="flex" justifyContent="flex-start">
+            <IconButton
+              onClick={() => {
+                fetch(`http://portfoliodb.link:8080/thread`, {
+                  method: "DELETE",
+                  body: JSON.stringify({ id: threadData.id }),
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                })
+                  .then((data) => data.json())
+                  .then((data) => {
+                    if (data.error) {
+                      alert(
+                        "글이 삭제되지 않았습니다, 다시 시도해주세요. 죄송합니다"
+                      );
+                    } else {
+                      window.location.href = "#/";
+                      window.location.reload();
+                    }
+                  });
+              }}
+              sx={{
+                color: "form.button.content",
+                display: threadData.is_writer ? "inline-block" : "none",
+              }}
+            >
+              <DeleteIcon />
+            </IconButton>
+
+            <IconButton
+              onClick={() => {
+                window.location.href = `/#/thread/modify/${params.id}`;
+                window.location.reload();
+              }}
+              sx={{
+                color: "form.button.content",
+                display: threadData.is_writer ? "inline-block" : "none",
+              }}
+            >
+              <ModifyIcon />
+            </IconButton>
+          </Box>
         ) : (
           ""
         )}
